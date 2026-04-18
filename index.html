@@ -12,13 +12,22 @@
 
   <body>
     <header class="custom-header scalar-app">
-      <img src="https://translateplus.io/assets/images/logo-dark.png" alt="TranslatePlus Logo" class="logo-dark" style="width: 200px; height: auto;">
-      <img src="https://translateplus.io/assets/images/logo-light.png" alt="TranslatePlus Logo" class="logo-light" style="width: 200px; height: auto;">
-      <nav>
+      <a href="/"><img src="https://translateplus.io/assets/images/logo-dark.png" alt="TranslatePlus Logo" class="logo-dark" style="width: 200px; height: auto;"></a>
+      <a href="/"><img src="https://translateplus.io/assets/images/logo-light.png" alt="TranslatePlus Logo" class="logo-light" style="width: 200px; height: auto;"></a>  
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <nav id="nav-menu">
         <a href="https://translateplus.io" target="_blank">Website</a>
         <a href="https://app.translateplus.io" target="_blank">Dashboard</a>
         <a href="https://status.translateplus.io" target="_blank">Status</a>
       </nav>
+
+      <script>
+        function toggleMenu() {
+          const navMenu = document.getElementById('nav-menu');
+          navMenu.classList.toggle('active');
+        }
+      </script>
     </header>
     <div id="app"></div>
 

@@ -9,44 +9,57 @@
     font-size: var(--scalar-font-size-2);
     padding: 0 18px;
     position: sticky;
-    justify-content: space-between;
     top: 0;
     z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    justify-content: flex-start;
   }
-  .custom-header,
   .custom-header nav {
     display: flex;
     align-items: center;
     gap: 18px;
+    margin-left: auto;
   }
   .custom-header a:hover {
     color: var(--scalar-color-2);
   }
-  /* Default fallback (light) */
-.logo-dark {
-    display: none;
+  /* One logo link visible at a time — avoids empty flex items that shift the logo (e.g. centered in light mode) */
+  .header-logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 0;
   }
-  
-  .logo-light {
+  .header-logo-link img {
+    width: 200px;
+    height: auto;
     display: block;
   }
-  
-  /* When DARK mode is active */
-  body.dark-mode .logo-dark {
-    display: block;
-  }
-  
-  body.dark-mode .logo-light {
+
+  /* Default (Scalar light UI): show logo-light asset; dark UI uses logo-dark */
+  .header-logo-link--dark {
     display: none;
   }
-  
-  /* When LIGHT mode is active */
-  body.light-mode .logo-dark {
+  .header-logo-link--light {
+    display: flex;
+  }
+
+  body.dark-mode .header-logo-link--dark {
+    display: flex;
+  }
+  body.dark-mode .header-logo-link--light {
     display: none;
   }
-  
-  body.light-mode .logo-light {
-    display: block;
+
+  body.light-mode .header-logo-link--dark {
+    display: none;
+  }
+  body.light-mode .header-logo-link--light {
+    display: flex;
   }
   /* Hide hamburger on desktop */
 .menu-toggle {

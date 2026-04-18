@@ -7,9 +7,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1" />
       <link rel="icon" href="https://translateplus.io/assets/images/translateplus.png" />
+      <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
+    <header class="custom-header scalar-app">
+      <img src="https://translateplus.io/assets/images/logo-dark.png" alt="TranslatePlus Logo" class="logo-dark" style="width: 200px; height: auto;">
+      <img src="https://translateplus.io/assets/images/logo-light.png" alt="TranslatePlus Logo" class="logo-light" style="width: 200px; height: auto;">
+      <nav>
+        <a href="https://translateplus.io" target="_blank">Website</a>
+        <a href="https://app.translateplus.io" target="_blank">Dashboard</a>
+        <a href="https://status.translateplus.io" target="_blank">Status</a>
+      </nav>
+    </header>
     <div id="app"></div>
 
     <!-- Load the Script -->
@@ -18,9 +28,17 @@
     <!-- Initialize the Scalar API Reference -->
     <script>
       Scalar.createApiReference('#app', {
-        // The URL of the OpenAPI/Swagger document
-        url: 'https://api.translateplus.io/openapi.json'
-      })
+      url: 'https://api.translateplus.io/openapi.json',
+      customCss: `
+          .powered-by,
+          .scalar-powered-by,
+          a[href*="scalar.com"],
+          [class*="PoweredBy"],
+          [class*="powered-by"] {
+            display: none !important;
+          }
+        `,
+    });
     </script>
   </body>
 </html>

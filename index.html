@@ -8,6 +8,8 @@
       content="width=device-width, initial-scale=1" />
       <link rel="icon" href="https://translateplus.io/assets/images/translateplus.png" />
       <link rel="stylesheet" href="style.css">
+      <!-- Remap legacy Nextra pathnames to Scalar deep links before the app boots -->
+      <script src="/legacy-redirects.js"></script>
   </head>
 
   <body>
@@ -31,9 +33,6 @@
     </header>
     <div id="app"></div>
 
-    <!-- Remap old docs-nextra pathnames to Scalar deep links -->
-    <script src="/legacy-redirects.js"></script>
-
     <!-- Load the Script -->
     <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
 
@@ -54,4 +53,3 @@
     </script>
   </body>
 </html>
-
